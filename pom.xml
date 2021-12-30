@@ -21,10 +21,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -92,12 +94,19 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-<!--  	<modules>
-		<module>basic</module>
-		<module>hypermedia</module>
-		<module>conditional</module>
-		<module>events</module>
-		<module>security</module>
-	</modules> -->
-	<packaging>pom</packaging> <!-- fix -->
+	
+	<!--  https://stackoverflow.com/questions/26021141/maven-child-module-does-not-exist  -->
+	<profiles>
+		<profile>
+			<modules>
+				<module>basic</module>
+				<module>hypermedia</module>
+				<module>conditional</module>
+				<module>events</module>
+				<module>security</module>
+			</modules>
+		</profile>
+	</profiles>
+
+	<!-- <packaging>pom</packaging>  fix -->
 </project>
